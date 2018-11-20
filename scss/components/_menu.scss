@@ -1,0 +1,126 @@
+.menu {
+  background-color: $blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  display: none;
+
+  &_open {
+    display: block;
+  }
+
+  &__wrp {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100vh;
+    padding-top: 16%;
+  }
+
+  &__btn {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    display: none;
+    cursor: pointer;
+
+    @media #{$breakpointMobile} {
+      display: inline-block;
+    }
+
+    &::before {
+      content: "";
+      width: 15px;
+      height: 2px;
+      position: absolute;
+      top: 7px;
+      left: 5px;
+      background-color: #ffffff;
+    }
+
+    &::after {
+      content: "";
+      width: 15px;
+      height: 2px;
+      position: absolute;
+      top: 17px;
+      left: 5px;
+      background-color: #ffffff;
+    }
+
+    &_open {
+      z-index: 3;
+      border: none;
+
+      &::before {
+        top: 0px;
+        width: 30px;
+        transform: rotate(45deg);
+      }
+      &::after {
+        top: 0px;
+        width: 30px;
+        transform: rotate(-45deg);
+      }
+    }
+
+  }
+
+  &__btn-icon {
+    display: inline-block;
+    width: 15px;
+    height: 2px;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    background-color: #ffffff;
+
+    .menu__btn_open & {
+      display: none;
+    }
+  }
+
+  &__form {
+    max-width: 500px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__contact {
+    @extend %flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 19px;
+    color: #ffffff;
+    padding-bottom: em(13);
+
+    &_bold {
+      font-weight: 700;
+    }
+  }
+
+  &__input {
+      padding-bottom: em(20);
+      padding-top: em(20);
+  }
+
+  &__form-btn {
+    width: 100%;
+    color: #ffffff;
+    border-color: #ffffff;
+    padding-top: em(11);
+    padding-bottom: em(11);
+  }
+
+
+
+}

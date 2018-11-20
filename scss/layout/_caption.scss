@@ -1,0 +1,54 @@
+//Caption
+.caption {
+    
+    
+    &_size_g {
+        font-size: 1em;
+	    line-height: 1.1875;
+      @media #{$breakpointDisplay} {
+        font-size: em(18);
+      }
+    }
+    
+    &_size_s {
+	    font-size: 12px;
+	    line-height: 18px;
+    }
+    
+    &_size_m {
+        font-size: em(18);
+        line-height: em(24,18);
+      @media #{$breakpointDisplay} {
+        font-size: em(16);
+      }
+    }
+    
+    &_size_l {
+	    font-size: em(24);
+	    line-height: em(36,24);
+      @media #{$breakpointMobile} {
+        font-size: em(21);
+      }
+    }
+	
+	&_size_xl {
+		font-size: em(30);
+		line-height: em(40,30);
+      @media #{$breakpointDisplay} {
+        font-size: em(26)
+      }
+	}
+	
+	&_w300 {
+		font-weight: 300;
+	}
+
+    &_align_center {
+        text-align: center;
+    }
+    
+    &_no_margin {
+        margin: 0;
+    }
+
+}

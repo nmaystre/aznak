@@ -1,0 +1,90 @@
+// Base
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em
+}
+
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust:none;
+    text-size-adjust: none;
+}
+
+html, body {
+    position: relative;
+    min-height: 100%;
+    font-size: 16px;
+    font-family: $roboto;
+	font-weight: 400;
+    overflow-x: hidden;
+    @media #{$breakpointMobile} {
+        font-size: 12px;
+    }
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+.page {
+	position: relative;
+}
+
+a {
+    @include transition (all 0.3s linear);
+    outline: none;
+    color: #000;
+	text-decoration: none;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.1875;
+    margin: 1em 0;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="button"],
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}

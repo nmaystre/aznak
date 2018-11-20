@@ -1,0 +1,99 @@
+//Contacts
+.contacts {
+	
+	&__wrp {
+		
+	}
+	
+	&__map {
+		width: 100%;
+		position: relative;
+		padding-bottom: em(500);
+		@media #{$breakpointMobile} {
+			padding-bottom: 220px;
+		}
+
+		&-frame {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+	
+	&__list {
+		@extend %wrp;
+		@extend %padding_g;
+		padding-top: em(47);
+		padding-bottom: em(51);
+		
+		@extend %flexbox;
+		@include justify-content(space-between);
+		@include align-items(center);
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 64px;
+			padding-right: 64px;
+			@include flex-wrap(wrap);
+			padding-top: em(10);
+			padding-bottom: em(40);
+		}
+		@media #{$breakpointMobile} {
+			max-width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+			//@include flex-direction(column);
+			@include align-items(center);
+			@include justify-content(center);
+		}
+	}
+	
+	&__item {
+		@media #{$breakpointTablet} {
+			width: 50%;
+			text-align: center;
+			margin-top: em(30);
+			min-height: 75px;
+		}
+
+		@media #{$breakpointMobile} {
+			width: 300px;
+		}
+
+		&-title {
+			margin-bottom: 1.1em;
+		}
+		
+		&-text {
+			
+		}
+		
+		&-link {
+			&:hover {
+				color: $blue;
+			}
+		}
+		
+		&-mail {
+			color: #010101;
+			display: block;
+			text-align: center;
+			@media #{$breakpointMobile} {
+				display: none;
+			}
+			
+			&:hover {
+				color: $blue;
+			}
+		}
+		
+		&-button {
+			margin-bottom: em(16);
+			@media #{$breakpointMobile} {
+				margin-top: em(10);
+			}
+		}
+	}
+}

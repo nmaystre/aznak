@@ -1,0 +1,27 @@
+//NAVIGATION LAYOUT
+.navigation {
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__link {
+        display: inline-block;
+        min-width: 3em;
+        padding: 1em;
+        color: #fff;
+        background-color: #000;
+    }
+
+    // Type Inline
+    &_type_inline &__item {
+        display: inline-block;
+    }
+    
+}

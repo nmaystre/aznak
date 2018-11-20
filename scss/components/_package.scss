@@ -1,0 +1,168 @@
+//Package
+.package {
+	
+	&__wrp {
+		padding-left: $col_lg;
+		padding-top: 3.1%;
+		padding-bottom: 10%;
+		@extend %wrp;
+		position: relative;
+
+		@media #{$breakpointDisplay} {
+			max-width: 1024px;
+			padding-left: 85px;
+		}
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 0;
+		}
+		@media #{$breakpointMobile} {
+			max-width: 100%;
+		}
+	}
+	
+	&__quote {
+		position: absolute;
+		z-index: 1;
+		top: 14%;
+		left: $col_lg;
+		display: inline-block;
+		padding: em(22) em(33) em(28) em(38);
+		background-color: #fff;
+		border: 3px solid $blue;
+		@media #{$breakpointDisplay} {
+			left: 85px;
+			padding: em(16) em(20) em(14) em(26);
+		}
+		@media #{$breakpointTablet} {
+			display: none;
+		}
+		
+		&::after {
+			content: '';
+			position: absolute;
+			width: em(19);
+			height: em(19);
+			z-index: 2;
+			bottom: - em(21);
+			left: em(43);
+			background-color: #fff;
+			border-left: 3px solid $blue;
+			border-bottom: 3px solid $blue;
+			@include transform-origin(0 0);
+			@include rotate(-45deg);
+		}
+		
+		&-text {
+			color: $dark;
+		}
+	}
+	
+	&__box {
+		position: absolute;
+		z-index: 2;
+		width: em(380);
+		left: em(36);
+		bottom: 0;
+		@include transition(transform .3s ease-out);
+		@media #{$breakpointDisplay} {
+			left: em(70);
+			bottom: 0;
+			width: em(280);
+		}
+		
+		img {
+			max-width: 100%;
+			vertical-align: middle;
+		}
+		
+		&:hover {
+			@include translate(0,-10%);
+		}
+
+		@media #{$breakpointTablet} {
+			display: none;
+		}
+	}
+	
+	&__gallery-wrp {
+		padding-left: $col_lg*2;
+		@media #{$breakpointDisplay} {
+			padding-left: 255px;
+		}
+		@media #{$breakpointTablet} {
+			padding-left: 0;
+		}
+
+
+	}
+	
+	&__gallery {
+		@extend %flexbox;
+		@include justify-content(space-between);
+		@include align-items(flex-start);
+		position: relative;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: 40%;
+			left: -27.4074074%;    
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			@extend %gradient_lines;
+			@media #{$breakpointDisplay} {
+				left: -43%;
+				height: 80%;
+			}
+			@media #{$breakpointTablet} {
+				left: -10%;
+				height: 100%;
+				top: 30%;
+			}
+			@media #{$breakpointMobile} {
+				width: 300px;
+				left: -20px;
+				top: 40px
+			}
+		}
+	}
+	
+	&__item {
+		@include flex(1);
+		position: relative;
+		padding-bottom: em(250);
+		margin-right: em(10);
+		overflow: hidden;
+
+		@media #{$breakpointDisplay} {
+			padding-bottom: em(200);
+		}
+		@media #{$breakpointMobile} {
+			min-width: 200px;
+			padding-bottom: em(240);
+		}
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	
+	&__item:hover &__img {
+		@include scale(1.06);
+	}
+	
+	&__img {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		@include transition(transform .3s ease-out);
+	}
+}

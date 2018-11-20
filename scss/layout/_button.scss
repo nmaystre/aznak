@@ -1,0 +1,69 @@
+//Button
+.button {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+
+    background: none;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1em;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 0;
+    
+    border: none;
+    outline: 0;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    @include transition (all 0.3s ease);
+
+  @media #{$breakpointMobile} {
+    font-size: em(20);
+    padding-top: em(11);
+    padding-bottom: em(11);
+  }
+
+    &_theme_light {
+	    border: 1px solid #fff;
+	    background-color: transparent;
+	    color: #fff;
+	    -moz-box-shadow: 0 0 9px rgba(189, 128, 48, 0.21);
+	    -webkit-box-shadow: 0 0 9px rgba(189, 128, 48, 0.21);
+	    box-shadow: 0 0 9px rgba(189, 128, 48, 0.21);
+        
+        &:hover {
+	        background-color: #00acf3;
+        }
+    }
+
+	&_theme_dark {
+		border: 1px solid #000;
+		background-color: transparent;
+		color: #000;
+		-moz-box-shadow: 0 0 9px rgba(189, 128, 48, 0.21);
+		-webkit-box-shadow: 0 0 9px rgba(189, 128, 48, 0.21);
+		box-shadow: 0 0 9px rgba(189, 128, 48, 0.21);
+
+		&:hover {
+			color: #fff;
+			border-color: #00acf3;
+			background-color: #00acf3;
+		}
+	}
+    
+    &_size_m {
+	    border-radius: 20px;
+	    padding: em(8) 2.2em em(10);
+    }
+	
+
+    &_align_center {
+        margin: auto;
+    }
+}

@@ -1,0 +1,54 @@
+//Heading
+.heading {
+    font-weight: 700;
+    margin: 0 0 .54em 0;
+    
+    &_type_h1 {
+        font-size: em(72);
+	    line-height: 1.24;
+      @media #{$breakpointDisplay} {
+        font-size: em(60);
+      }
+      @media #{$breakpointTablet} {
+        font-size: em(34);
+      }
+      @media #{$breakpointMobile} {
+        font-size: em(44);
+      }
+    }
+
+    &_type_h2 {
+        font-size: em(36);
+	    line-height: em(48,36);
+      @media #{$breakpointMobile} {
+        font-size: em(40);
+      }
+    }
+
+    &_type_h3 {
+        font-size: em(24);
+	    line-height: em(30,24);
+      @media #{$breakpointMobile} {
+        font-size: em(19);
+      }
+    }
+	
+	&_type_h5 {
+		font-size: em(16);
+      @media #{$breakpointDisplay} {
+        font-size: em(18);
+      }
+	}
+    
+    .section_dark & {
+	    color: #fff;
+    }
+	
+	.section_light & {
+		color: $dark;
+	}
+    
+    &_align_center {
+        text-align: center;
+    }
+}

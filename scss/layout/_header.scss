@@ -1,0 +1,99 @@
+//HEADER LAYOUT
+.header {
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: #fff;
+	
+    &__wrp {
+        @extend %wrp;
+        @extend %padding_g;
+	    
+	    @extend %flexbox;
+	    @include justify-content(space-between);
+	    @include align-items(center);
+	    padding-top: em(24);
+	    padding-bottom: em(24);
+		@media #{$breakpointDisplay} {
+			max-width: 1024px;
+			padding-left: 85px;
+			padding-right: 85px;
+		}
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 64px;
+			padding-right: 64px;
+		}
+		@media #{$breakpointMobile} {
+			max-width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+    }
+	
+	&__logo {
+		display: block;
+		width: 147px;
+		@include transition(opacity .2 ease-out);
+		@media #{$breakpointTablet} {
+			width: 140px;
+		}
+		
+		img {
+			max-width: 100%;
+			vertical-align: middle;
+		}
+		
+		&:hover {
+			@include opacity(.8);
+		}
+	}
+    
+	&__contact {
+		width: $col_lg*4;
+		@extend %flexbox;
+		@include justify-content(space-between);
+		@include align-items(center);
+		@media #{$breakpointTablet} {
+			width: 320px;
+			@include justify-content(center);
+		}
+		@media #{$breakpointMobile} {
+			display: none;
+		}
+	}
+	
+	&__item {
+		display: inline-block;
+		padding: em(7) em(14);
+		color: #fff;
+		@media #{$breakpointTablet} {
+			//font-size: em(14);
+		}
+		
+		&_bold {
+			font-weight: 700;
+		}
+
+		&_mob {
+			@media #{$breakpointTablet} {
+				display: none;
+			}
+		}
+		
+		&:hover {
+			color: $blue;
+		}
+	}
+
+	&__button {
+		@media #{$breakpointMobile} {
+			display: none;
+		}
+	}
+
+
+    
+}

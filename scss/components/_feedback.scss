@@ -1,0 +1,89 @@
+//Feedback
+.feedback {
+	
+	&__wrp {
+		@extend %wrp;
+		@extend %padding_l;
+		position: relative;
+		z-index: 1;
+		padding-top: 8%;
+		padding-bottom: 10%;
+
+		@media #{$breakpointDisplay} {
+			max-width: 1024px;
+			padding-left: 85px;
+			padding-right: 85px;
+		}
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 64px;
+			padding-right: 64px;
+		}
+		@media #{$breakpointMobile} {
+			max-width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 16%;
+			padding-bottom: 26%;
+		}
+	}
+	
+	&__img {
+		display: block;
+		position: absolute;
+		z-index: 0;
+		width: 47.638889%;
+		top: 50%;
+		right: 0;
+		@include translate(0,-50%);
+		text-align: right;
+		@media #{$breakpointTablet} {
+			top: 40%;
+			width: 40%;
+		}
+		@media #{$breakpointMobile} {
+			display: none;
+		}
+
+			img {
+			display: inline-block;
+			max-width: 100%;
+			vertical-align: middle;
+		}
+	}
+	
+	&__content {
+		width: $col_lg*4;
+		@media #{$breakpointMobile} {
+			width: 100%;
+			max-width: 400px;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	
+	&__heading {
+		margin-bottom: .25em;
+	}
+	
+	&__form-wrp {
+		margin-top: em(66);
+		@media #{$breakpointTablet} {
+			margin-top: em(36);
+		}
+		@media #{$breakpointMobile} {
+			margin-top: em(20);
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	&__btn {
+		@media #{$breakpointMobile} {
+			width: 100%;
+		}
+	}
+
+
+}

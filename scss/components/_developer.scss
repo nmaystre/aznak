@@ -1,0 +1,43 @@
+//developer
+.developer {
+	@extend %flexbox;
+	@include align-items(center);
+	color: #ececec;
+	@extend .caption_size_s;
+
+	@media #{$breakpointMobile} {
+		@include flex-direction(column);
+		text-align: center;
+	}
+
+	&__icon {
+		width: em(60);
+		@include flex-shrink(0);
+
+		img {
+			max-width: 100%;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			@include opacity(.8);
+		}
+	}
+
+	&__desc {
+		margin-left: em(18);
+
+		@media #{$breakpointMobile} {
+			margin-top: 20px;
+		}
+	}
+
+	&__link {
+		color: #ececec;
+		display: inline-block;
+		text-decoration: underline;
+		&:hover {
+			color: $blue;
+		}
+	}
+}

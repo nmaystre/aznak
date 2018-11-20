@@ -1,0 +1,68 @@
+//FOOTER LAYOUT
+.footer {
+    color: #ececec;
+    background-color: #2d2d2d;
+
+    &__wrp {
+        @extend %wrp;
+        @extend %padding_g;
+
+	    @extend %flexbox;
+	    @include justify-content(space-between);
+	    @include align-items(center);
+	    padding-top: em(24);
+	    padding-bottom: em(24);
+
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 64px;
+			padding-right: 64px;
+		}
+
+		@media #{$breakpointMobile} {
+			max-width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			@include flex-direction(column);
+		}
+    }
+
+	&__logo {
+		display: block;
+		width: 141px;
+		@include transition(opacity .2 ease-out);
+
+		img {
+			max-width: 100%;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			@include opacity(.8);
+		}
+	}
+	
+	&__box {
+		text-align: center;
+		@media #{$breakpointMobile} {
+			padding-top: em(40);
+			padding-bottom: em(40);
+		}
+	}
+	
+	&__legal {
+		display: block;
+		color: #ececec;
+		text-decoration: underline;
+		margin-bottom: rem(4);
+		
+		&:hover {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+	
+	
+}

@@ -1,0 +1,184 @@
+.pluses {
+
+	&__wrp {
+		@extend %padding_l;
+		padding-top: .4%;
+		padding-bottom: 22%;
+		@extend %wrp;
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		@media #{$breakpointDisplay} {
+			max-width: 1024px;
+			padding-left: 85px;
+			padding-right: 85px;
+		}
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 64px;
+			padding-right: 64px;
+			padding-bottom: 28%;
+		}
+		@media #{$breakpointMobile} {
+			max-width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 15%;
+		}
+	}
+
+	&__list {
+		@extend %flexbox;
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		padding-left: 0;
+		margin-top: em(58);
+		margin-bottom: em(67);
+		list-style: none;
+		margin-left: auto;
+		margin-right: auto;
+		@media #{$breakpointTablet} {
+			margin-top: em(40);
+			margin-bottom: em(60);
+		}
+		@media #{$breakpointTablet} {
+			margin-top: em(30);
+			margin-bottom: em(60);
+
+		}
+	}
+
+	&__item {
+		text-align: left;
+		width: 48%;
+		max-width: 460px;
+		@extend %flexbox;
+		margin-top: em(33, 16);
+
+		@media #{$breakpointTablet} {
+			width: 46%;
+			@include flex-direction(column);
+			@include align-items(center);
+			@include align-content(center);
+			text-align: center;
+			//min-height: 250px;
+			margin-top: em(20);
+		}
+
+		@media #{$breakpointMobile} {
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&:nth-child(2n) {
+			@media #{$breakpointTablet} {
+				@include order(1);
+			}
+		}
+		&:nth-child(4n) {
+			@media #{$breakpointTablet} {
+				@include order(1);
+			}
+		}
+	}
+
+	&__content {
+		max-width: em(360, 16);
+		@media #{$breakpointTablet} {
+			margin-top: em(15);
+		}
+	}
+
+	&__caption {
+		margin-bottom: 1em;
+	}
+
+	&__text {
+		@media #{$breakpointMobile} {
+			font-size: em(19);
+		}
+	}
+
+	&__item:hover &__pic .hover {
+		@include translate(-3px,3px);
+	}
+	
+	&__pic {
+		width: 90px;
+		@media #{$breakpointTablet} {
+			width: 70px;
+			height: 70px;
+		}
+
+		.hover {
+			@include transition(transform .2s ease-out);
+		}
+
+		&--cheap {
+			svg {
+				width: 65px;
+				height: 65px;
+
+				.st0 {
+					fill: #7DDAFD;
+				}
+
+				.st1 {
+					fill: #013F8B;
+				}
+			}
+		}
+
+		&--quality {
+			svg {
+				width: 65px;
+				height: 65px;
+
+				.st0 {
+					fill: #7DDAFD;
+				}
+				.st1 {
+					fill: #013F8B;
+				}
+			}
+		}
+
+		&--delivery {
+			svg {
+				width: 73.5px;
+				height: 40px;
+				@media #{$breakpointTablet} {
+					width: 70px;
+					height: 70px;
+				}
+				.st0 {
+					fill: #7DDAFD;
+				}
+				.st1 {
+					fill: #013F8B;
+				}
+			}
+		}
+
+		&--production {
+			svg {
+				width: 65px;
+				height: 67.4px;
+				.st0 {
+					fill: #7DDAFD;
+				}
+				.st1 {
+					fill: #013F8B;
+				}
+			}
+		}
+	}
+
+	&__decoration {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+}

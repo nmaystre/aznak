@@ -1,0 +1,149 @@
+//Banner
+.banner {
+	position: relative;
+
+	&:hover &__bg {
+		will-change: transform;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 132%;
+		height: 100%;
+		margin-left: -66%;
+		z-index: 0;
+		background-image: url("../images/bg_banner.png");
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position: 50% 0;
+		@media #{$breakpointDisplay} {
+			width: 130%;
+			margin-left: -66%;
+
+		}
+		@media #{$breakpointTablet} {
+			//background-image: url("../images/bg_banner_tablet.png");
+			//width: 130%;
+			//left: 0;
+			//margin-left: -50px;
+			width: 130%;
+			left: 0;
+			margin-left: -25%;
+		}
+		@media #{$breakpointMobile} {
+			//background-image: url("../images/bg_banner_mobile.png");
+			//width: 100%;
+			//margin-left: 0;
+			//background-size: 600px auto;
+		}
+	}
+
+	&__wrp {
+		position: relative;
+		z-index: 1;
+		padding-top: 13%;
+		padding-bottom: 7%;
+		@media #{$breakpointDisplay} {
+			max-width: 1024px;
+			padding-left: 85px;
+			padding-right: 85px;
+			padding-top: 11%;
+		}
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 64px;
+			padding-right: 64px;
+			padding-top: 13%;
+		}
+		@media #{$breakpointMobile} {
+			max-width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	&__content {
+		max-width: $col_lg*6;
+		padding: 0 em(40);
+		@media #{$breakpointTablet} {
+			max-width: 768px;
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+
+		@media #{$breakpointTablet} {
+			padding-left: 0;
+		}
+	}
+
+	&__heading {
+
+	}
+
+	&__caption {
+		color: #fff;
+		@media #{$breakpointDisplay} {
+			max-width: 580px;
+		}
+		@media #{$breakpointTablet} {
+			font-size: em(18);
+			max-width: 260px;
+		}
+	}
+
+	&__list {
+		margin-top: 20%;
+		@extend %flexbox;
+		@include justify-content(flex-start);
+
+		@media #{$breakpointDisplay} {
+			margin-top: 25%;
+			br {
+				display: none;
+			}
+		}
+
+		@media #{$breakpointTablet} {
+			margin-top: 20%;
+			box-sizing: border-box;
+			@include flex-direction(column);
+		}
+
+		@media #{$breakpointMobile} {
+			margin-top: 10%;
+			max-width: 485px;
+		}
+	}
+
+		&__item {
+			width: auto;
+			position: relative;
+			padding-left: em(49);
+			margin-right: em(100);
+			@media #{$breakpointDisplay} {
+				width: 50%;
+				margin-right: em(70);
+			}
+			@media #{$breakpointDisplay} {
+				margin-top: em(40);
+				margin-right: 0;
+				width: 100%;
+			}
+
+			&::before {
+				content: '';
+				width: em(32);
+				height: 1px;
+				background-color: #222;
+				position: absolute;
+				top: em(12);
+				left: 0;
+			}
+
+			&-text {
+				color: $grey;
+			}
+		}
+}

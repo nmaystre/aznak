@@ -1,0 +1,13 @@
+//section
+.section {
+	position: relative;
+	z-index: 1;
+	
+    &__wrp {
+        @extend %wrp;
+        @extend %padding_g;
+    }
+
+    
+    
+}
